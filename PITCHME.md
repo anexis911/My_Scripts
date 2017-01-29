@@ -36,7 +36,8 @@ def conn_processes(function, devices, command):
     queue = multiprocessing.Queue()
 
     for device in devices:
-        p = multiprocessing.Process(target = function, args = (device, command, queue))
+        p = multiprocessing.Process(target = function,
+                                    args = (device, command, queue))
         p.start()
         processes.append(p)
 
@@ -54,7 +55,7 @@ print( conn_processes(connect_ssh, devices['routers'], COMMAND) )
 
 #HSLIDE
 
-### Python example
+Python example
 
 ```python
 def conn_processes(function, devices, command):
@@ -62,7 +63,8 @@ def conn_processes(function, devices, command):
     queue = multiprocessing.Queue()
 
     for device in devices:
-        p = multiprocessing.Process(target = function, args = (device, command, queue))
+        p = multiprocessing.Process(target = function,
+                                    args = (device, command, queue))
         p.start()
         processes.append(p)
 
