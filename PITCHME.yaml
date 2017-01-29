@@ -1,2 +1,2 @@
 highlight : zenburn
-mousewheel : true
+theme-override : assets/css/PITCHME.css
