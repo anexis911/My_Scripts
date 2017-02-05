@@ -1,0 +1,38 @@
+---
+
+- name: Collect IOS facts
+  hosts: 10.255.0.2
+  gather_facts: false
+  connection: local
+
+  vars:
+    empty_list: []
+
+  tasks:
+
+    - name: Facts
+      ios_facts:
+        gather_subset: interfaces
+        provider: "{{ cli }}"
+
+#    - name: Test
+#      copy:
+#        content: "{{ item.key | to_nice_json }}"
+#        dest: "./{{inventory_hostname}}_facts.json"
+#      with_dict: "{{ansible_net_interfaces}}"
+#      when: not item.value.description
+
+    - name: Try to combine
+      set_fact:
+        empty_list: '{{ empty_list + [item.key] }}'
+      with_dict: "{{ansible_net_interfaces}}"
+      when: not item.value.description
+
+    - name: Test
+      debug: var=empty_list
+
+
+#    - name: Test
+#      debug: var=item.key
+#      with_dict: "{{ansible_net_interfaces}}"
+#      when: not item.value.description
