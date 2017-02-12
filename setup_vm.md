@@ -72,3 +72,32 @@ six==1.10.0
 traitlets==4.3.1
 wcwidth==0.1.7
 ```
+
+
+```
+set nocompatible
+set undofile
+filetype plugin indent on
+
+
+set ignorecase
+set smartcase
+set gdefault
+
+set encoding=utf-8
+set t_Co=256
+
+let python_highlight_all=1
+set fileformat=unix
+set ruler
+
+set sts=4
+set ts=4
+set sw=4
+set expandtab
+set autoindent
+syn on
+filetype indent on
+colorscheme desert
+
+```
