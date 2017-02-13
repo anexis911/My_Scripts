@@ -1,7 +1,8 @@
 Установить [Virtualbox](https://www.virtualbox.org/wiki/Downloads) и [Vagrant](https://www.vagrantup.com/downloads.html)
 
 Скачать подготовленный образ Vagrant:
-https://drive.google.com/open?id=0ByuSz65Dcv1ldkpzQ2k2ZThZYmM
+https://drive.google.com/open?id=0ByuSz65Dcv1lUHN6TW5RZEsxZzQ
+
 
 Vagrant и Virtualbox должны находится в каталоге, в пути к которому нет кириллицы.
 Подробнее этот аспект описан в статье.
