@@ -1,44 +1,36 @@
-Установить virtualbox и vagrant
+Установить [Virtualbox](https://www.virtualbox.org/wiki/Downloads) и [Vagrant](https://www.vagrantup.com/downloads.html)
 
-Скачать образ
+Скачать подготовленный образ Vagrant:
 https://drive.google.com/open?id=0ByuSz65Dcv1ldkpzQ2k2ZThZYmM
 
+Vagrant и Virtualbox должны находится в каталоге, в пути к которому нет кириллицы.
+Подробнее этот аспект описан в статье.
+
+Добавить образ в Vagrant:
 ```
-vagrant box add pyneng pyneng_course.box
+vagrant box add pyneng pyneng.box
 vagrant init pyneng
 ```
-Если нужна графика:
-Открыть файл Vagrantfile и раскомментировать строки:
-```
-config.vm.provider "virtualbox" do |vb|
-     vb.gui = true
-   end
-```
+
+Скачать файл [Vagrantfile]() в текущий каталог:
 
 После этого:
 ```
 vagrant up
 ```
 
-Username: vagrant
+Виртуальная машина должна запуститься.
 
-Password: vagrant
+В ней есть предустановленный пользователь:
+* Username: vagrant
+* Password: vagrant
 
-Графику запустить можно так:
-```
-startxfce4&
-```
 
-Просто по SSH подключаться так:
-```
-vagrant ssh
-```
+В виртуальной машине должна быть настроена сеть и по IP доступна хостовая система.
 
-В виртуалке должна быть настроена сеть. И изнутри виртуалки доступна хостовая система.
+В виртуальной машине установлены редакторы: vim и Sublime Text (на рабочем столе есть иконка).
 
-В виртуалке установлены редакторы: vim и Geany (на рабочем столе есть иконка).
-
-Каталоги с примерами и упражнениями находятся в каталоге pyneng_files.
+Каталоги с примерами и упражнениями находятся в каталоге pyneng_files на рабочем столе.
 
 Все модули, которые нужны в курсе, установлены в виртуальном окружении pyneng:
 ```
