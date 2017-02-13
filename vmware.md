@@ -18,3 +18,11 @@ IP-адрес получается по DHCP.
 ```
 workon pyneng
 ```
+
+
+> когда подключаешься по rdp и используешь терминал, то там ничего не табается
+```
+Open Application Menu > Settings > Window Manager.
+Click on Keyboard tab.
+Clear the Switch window for same application setting.
+```
