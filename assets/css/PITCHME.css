@@ -1,5 +1,8 @@
 .reveal pre {
     font-size: 0.35em;
     border: 0;
-    max-height: 700px;
+}
+
+.reveal pre code {
+    max-height: 500px;
 }
