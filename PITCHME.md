@@ -12,6 +12,8 @@ An application architecture for React
 
 #HSLIDE
 
+#### Python example
+
 ```python
 import multiprocessing
 from netmiko import ConnectHandler
