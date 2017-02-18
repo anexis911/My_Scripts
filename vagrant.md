@@ -3,10 +3,6 @@
 Скачать подготовленный образ Vagrant:
 https://drive.google.com/open?id=0ByuSz65Dcv1lUHN6TW5RZEsxZzQ
 
-
-
-https://drive.google.com/file/d/0ByuSz65Dcv1leHNMOXM2RkoxcXc/view?usp=sharing
-
 Vagrant и Virtualbox должны находится в каталоге, в пути к которому нет кириллицы.
 Подробнее этот аспект описан в [статье](https://habrahabr.ru/post/251529/) в разделе "Предварительная настройка".
 
