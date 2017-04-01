@@ -1,0 +1,20 @@
+defscrollback 10000
+hardstatus alwayslastline
+hardstatus string "%{rk}CCIE Labor%{bk}@%H %{gk}%c %{yk}%d.%m %{wk}%?%-Lw%?%{bw}%n*%f%t%?(%u)%?%{wk}%?%+Lw%?"
+
+screen -t menu sh -c 'while true; do ./menu.py ; clear; done'
+screen -t r1 sh -c 'while true; do telnet 127.0.0.1 60101 ; echo Retrying in 1 secods...; sleep 1 ; clear; done'
+screen -t r2 sh -c 'while true; do telnet 127.0.0.1 60102 ; echo Retrying in 1 secods...; sleep 1 ; clear; done'
+screen -t r3 sh -c 'while true; do telnet 127.0.0.1 60103 ; echo Retrying in 1 secods...; sleep 1 ; clear; done'
+screen -t r4 sh -c 'while true; do telnet 127.0.0.1 60104 ; echo Retrying in 1 secods...; sleep 1 ; clear; done'
+screen -t r5 sh -c 'while true; do telnet 127.0.0.1 60105 ; echo Retrying in 1 secods...; sleep 1 ; clear; done'
+screen -t r6 sh -c 'while true; do telnet 127.0.0.1 60106 ; echo Retrying in 1 secods...; sleep 1 ; clear; done'
+screen -t r7 sh -c 'while true; do telnet 127.0.0.1 60107 ; echo Retrying in 1 secods...; sleep 1 ; clear; done'
+screen -t r8 sh -c 'while true; do telnet 127.0.0.1 60108 ; echo Retrying in 1 secods...; sleep 1 ; clear; done'
+screen -t r9 sh -c 'while true; do telnet 127.0.0.1 60109 ; echo Retrying in 1 secods...; sleep 1 ; clear; done'
+screen -t r10 sh -c 'while true; do telnet 127.0.0.1 60110 ; echo Retrying in 1 secods...; sleep 1 ; clear; done'
+screen -t sw1 sh -c 'while true; do telnet 127.0.0.1 60201 ; echo Retrying in 1 secods...; sleep 1 ; clear; done'
+screen -t sw2 sh -c 'while true; do telnet 127.0.0.1 60202 ; echo Retrying in 1 secods...; sleep 1 ; clear; done'
+screen -t sw3 sh -c 'while true; do telnet 127.0.0.1 60203 ; echo Retrying in 1 secods...; sleep 1 ; clear; done'
+screen -t sw4 sh -c 'while true; do telnet 127.0.0.1 60204 ; echo Retrying in 1 secods...; sleep 1 ; clear; done'
+select 0
