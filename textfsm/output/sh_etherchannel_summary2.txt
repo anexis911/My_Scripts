@@ -12,3 +12,4 @@ Group  Port-channel  Protocol  Span-cluster  Ports
 2      Po2(U)            LACP          No     Gi0/6(P)   Gi0/7(P)
 3      Po3(U)            LACP          No     Gi1/0(P)   Gi1/1(P)   Gi1/2(P)   Gi1/3(P)
 4      Po4(U)            LACP          No     Gi2/0(P)   Gi2/1(P)   Gi2/2(P)   Gi2/3(P)
+                                              Gi3/0(P)   Gi3/1(P)   Gi3/2(P)   Gi3/3(P)
