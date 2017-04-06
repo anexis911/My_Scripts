@@ -5,9 +5,9 @@ Start
   ^\d+.* -> Continue.Record
   ^\d+ +${CHANNEL} +[\w-]+ +[\w ]+ +${MEMBERS} -> Continue
   ^\d+ +${CHANNEL} +[\w-]+ +[\w ]+ +(\w+\d+\/\d+\(\w+\)) +${MEMBERS} -> Continue
-  ^\d+ +${CHANNEL} +[\w-]+ +[\w ]+ +(\w+\d+\/\d+\(\w+\)) +(\w+\d+\/\d+\(\w+\)) +${MEMBERS} -> Continue
-  ^\d+ +${CHANNEL} +[\w-]+ +[\w ]+ +(\w+\d+\/\d+\(\w+\)) +(\w+\d+\/\d+\(\w+\)) +(\w+\d+\/\d+\(\w+\)) +${MEMBERS} -> Continue
+  ^\d+ +${CHANNEL} +[\w-]+ +[\w ]+ +((\w+\d+\/\d+\(\w+\)) +){2} +${MEMBERS} -> Continue
+  ^\d+ +${CHANNEL} +[\w-]+ +[\w ]+ +((\w+\d+\/\d+\(\w+\)) +){3} +${MEMBERS} -> Continue
   ^ +${MEMBERS} -> Continue
   ^ +(\w+\d+\/\d+\(\w+\)) +${MEMBERS} -> Continue
-  ^ +(\w+\d+\/\d+\(\w+\)) +(\w+\d+\/\d+\(\w+\)) +${MEMBERS} -> Continue
-  ^ +(\w+\d+\/\d+\(\w+\)) +(\w+\d+\/\d+\(\w+\)) +(\w+\d+\/\d+\(\w+\)) +${MEMBERS} -> Continue
+  ^ +((\w+\d+\/\d+\(\w+\)) +){2} +${MEMBERS} -> Continue
+  ^ +((\w+\d+\/\d+\(\w+\)) +){3} +${MEMBERS} -> Continue
