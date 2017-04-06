@@ -7,7 +7,3 @@ Start
   ^\d+ +${CHANNEL} +[\w-]+ +[\w ]+ +(\w+\d+\/\d+\(\w+\)) +${MEMBERS} -> Continue
   ^\d+ +${CHANNEL} +[\w-]+ +[\w ]+ +(\w+\d+\/\d+\(\w+\)) +(\w+\d+\/\d+\(\w+\)) +${MEMBERS} -> Continue
   ^\d+ +${CHANNEL} +[\w-]+ +[\w ]+ +(\w+\d+\/\d+\(\w+\)) +(\w+\d+\/\d+\(\w+\)) +(\w+\d+\/\d+\(\w+\)) +${MEMBERS} -> Continue
-  ^ +${MEMBERS} -> Continue
-  ^ +(\w+\d+\/\d+\(\w+\)) +${MEMBERS} -> Continue
-  ^ +(\w+\d+\/\d+\(\w+\)) +(\w+\d+\/\d+\(\w+\)) +${MEMBERS} -> Continue
-  ^ +(\w+\d+\/\d+\(\w+\)) +(\w+\d+\/\d+\(\w+\)) +(\w+\d+\/\d+\(\w+\)) +${MEMBERS} -> Continue
