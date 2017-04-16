@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from collections import namedtuple
+from collections import OrderedDict as odict
 from ansible.parsing.dataloader import DataLoader
 from ansible.vars import VariableManager
 from ansible.inventory import Inventory
@@ -36,7 +37,7 @@ def run_playbook(inventory_filename, playbook_filename):
     with open(playbook_filename) as f:
         playbook_content = yaml.load(f)
 
-    return_result_dict = {}
+    return_result_dict = odict()
     for play_src in playbook_content:
         play = Play().load(play_src, variable_manager=variable_manager, loader=loader)
 
@@ -79,12 +80,12 @@ def stdout_results(inventory_filename, playbook_filename):
             'device1': 'command output',
             'device2': 'command output'}}}
     '''
-    return_result_dict = {}
+    return_result_dict = odict()
     result = run_playbook(inventory_filename, playbook_filename)
 
     for play in result:
         result_dict = result[play]
-        play_dict = {}
+        play_dict = odict()
         play_tasks = result_dict['tasks']
         for task in play_tasks:
             task_name = task['task']['name']
@@ -101,7 +102,37 @@ def stdout_results(inventory_filename, playbook_filename):
     return return_result_dict
 
 
+def get_results(inventory_filename, playbook_filename, *args):
+    '''
+    Эта функция, в целом, аналогична stdout_results,
+    но она не привязана к конкретным параметрам в выводе Ansible.
+    Будут выводиться все параметры, которые указаны в args,
+    если они присутствуют в выводе Ansible.
+    '''
+    return_result_dict = odict()
+    result = run_playbook(inventory_filename, playbook_filename)
+
+    for play in result:
+        result_dict = result[play]
+        play_dict = odict()
+        play_tasks = result_dict['tasks']
+        for task in play_tasks:
+            task_name = task['task']['name']
+            play_dict[task_name] = odict()
+            hosts = task['hosts']
+            for ip in hosts:
+                play_dict[task_name][ip] = {}
+                for arg in args:
+                    if arg in hosts[ip].keys():
+                        play_dict[task_name][ip][arg] = hosts[ip][arg]
+
+        return_result_dict[play] = play_dict
+    return return_result_dict
+
+
 result = stdout_results('myhosts', '1_ios_command.yml')
+#Чтобы проверить функцию get_results надо закомментировать строку выше и раскомментировать нижнюю
+#result = get_results('myhosts', '2_ios_config_parents_mult.yml', 'updates', 'changed')
 
 with open('results.yaml', 'w') as f:
     f.write(yaml.dump(result, default_flow_style=False))
