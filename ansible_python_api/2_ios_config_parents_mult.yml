@@ -1,0 +1,32 @@
+---
+
+- name: Run cfg commands on routers
+  hosts: cisco-routers
+  gather_facts: false
+  connection: local
+
+  tasks:
+
+    - name: Config QoS policy
+      ios_config:
+        parents:
+          - policy-map OUT_QOS
+          - class class-default
+        lines:
+          - shape average 100000000 1000000
+        provider: "{{ cli }}"
+
+- name: Run cfg commands on r1
+  hosts: 192.168.100.1
+  gather_facts: false
+  connection: local
+
+  tasks:
+
+    - name: Config OSPF
+      ios_config:
+        parents:
+          - router ospf 1
+        lines:
+          - network 10.0.0.0 0.255.255.255 area 0
+        provider: "{{ cli }}"
