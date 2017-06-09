@@ -1,0 +1,65 @@
+set nocompatible
+set undofile
+
+filetype plugin indent on
+
+
+set ignorecase
+set smartcase
+set gdefault
+
+set encoding=utf-8
+
+"Enable folding
+set foldmethod=indent
+set foldlevel=99
+let g:SimpylFold_docstring_preview=1
+
+"Enable folding with the spacebar
+nnoremap <space> za
+
+
+"Save fold
+au BufWinLeave * mkview
+au BufWinEnter * silent loadview
+
+
+set t_Co=256
+
+let python_highlight_all=1
+set fileformat=unix
+set ruler
+
+set sts=4
+set ts=4
+set sw=4
+set expandtab
+set autoindent
+syn on
+colorscheme desert
+"colorscheme zenburn
+filetype indent on
+set pastetoggle=<F2>
+
+"Change leader key
+let mapleader = ","
+
+"Replace all tabs with 4 whitespaces
+nnoremap <leader>T :%s/\t/    /g<CR>
+
+"highlight search results (as you type)
+set incsearch
+set showmatch
+set hlsearch
+"clear out a search
+nnoremap <leader><space> :noh<cr>
+"reselect the text that was just pasted
+nnoremap <leader>v V`]
+"to exit back to normal mode
+inoremap jj <ESC>
+
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+
+set statusline+=%#warningmsg#
+set statusline+=%*
